@@ -5,7 +5,7 @@ from craft_parts import plugins
 FLUTTER_REPO = "https://github.com/flutter/flutter.git "
 
 class FlutterPluginProperties(plugins.PluginProperties, plugins.PluginModel):
-    flutter_branch: Literal["stable", "master", "dev"] = "stable"
+    flutter_channel: Literal["stable", "master", "beta"] = "stable"
     flutter_target: str = "lib/main.dart"
 
     @classmethod
@@ -48,7 +48,7 @@ class FlutterPlugin(plugins.Plugin):
 
     def _get_setup_flutter(self, options):
         return [
-            f"[ -d flutter-distro ] || git clone -b {options.flutter_branch} {FLUTTER_REPO} flutter-distro",
+            f"[ -d flutter-distro ] || git clone -b {options.flutter_channel} {FLUTTER_REPO} flutter-distro",
             "flutter doctor",
             "flutter pub get",
         ]
