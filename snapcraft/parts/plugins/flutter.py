@@ -1,4 +1,4 @@
-from typing import List, Dict, Set, cast, Literal, Any
+from typing import Any, Dict, List, Literal, Set, cast
 
 from craft_parts import plugins
 
