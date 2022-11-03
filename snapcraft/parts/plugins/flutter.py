@@ -10,7 +10,7 @@ class FlutterPluginProperties(plugins.PluginProperties, plugins.PluginModel):
     flutter_target: str = "lib/main.dart"
 
     @classmethod
-    def unmarshal(cls, data: Dict[str, Any]) -> "CondaPluginProperties":
+    def unmarshal(cls, data: Dict[str, Any]) -> "FlutterPluginProperties":
         """Populate class attributes from the part specification.
 
         :param data: A dictionary containing part properties.
