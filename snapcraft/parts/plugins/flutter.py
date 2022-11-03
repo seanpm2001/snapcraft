@@ -4,6 +4,7 @@ from craft_parts import plugins
 
 FLUTTER_REPO = "https://github.com/flutter/flutter.git "
 
+
 class FlutterPluginProperties(plugins.PluginProperties, plugins.PluginModel):
     flutter_channel: Literal["stable", "master", "beta"] = "stable"
     flutter_target: str = "lib/main.dart"
