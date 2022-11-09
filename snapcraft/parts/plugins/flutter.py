@@ -49,7 +49,7 @@ class FlutterPlugin(plugins.Plugin):
 
     def _get_setup_flutter(self, options):
         return [
-            f"[ -d flutter-distro ] || git clone -b {options.flutter_channel} {FLUTTER_REPO} flutter-distro",
+            f"[ -d flutter-distro ] || git clone --depth 1 -b {options.flutter_channel} {FLUTTER_REPO} flutter-distro",
             "flutter doctor",
             "flutter pub get",
         ]
